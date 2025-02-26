@@ -1,0 +1,212 @@
+---
+title: KiviBot 2025
+description: '轻量级、高性能、跨平台的 QQ 机器人框架'
+---
+import { Link } from 'nextra-theme-docs'
+import ScrollToTop from '../components/ScrollToTop'
+import '../style/index.css'
+
+<div className="home-content">
+  <div className="hero">
+    <div style={{
+      position: 'absolute',
+      top: 0,
+      left: 0,
+      width: '100%',
+      height: '100%',
+      background: 'url(/grid.svg)',
+      opacity: 0.1,
+      zIndex: -1
+    }} />
+    <h1 className="hero-title">
+      <img 
+        src="/kivibot-logo.png" 
+        alt="KiviBot Logo"
+        style={{
+          height: '60px',
+          margin: '0 auto',
+          display: 'block'
+        }}
+      />
+    </h1>
+    <p className="hero-subtitle">
+      轻量级、高性能、跨平台的 QQ 机器人框架
+      <br />
+      专为现代化 Node.js 设计
+    </p>
+    <div className="button-group">
+      <Link href="/docs" className="primary-button">
+        开始使用 →
+      </Link>
+      <a 
+        href="https://github.com/dogyyds/kivibot-doc"
+        target="_blank"
+        className="secondary-button"
+      >
+        GitHub ⭐️
+      </a>
+    </div>
+    <div className="floating" style={{
+      position: 'absolute',
+      right: '10%',
+      top: '20%',
+      width: '50px',
+      height: '50px',
+      background: 'linear-gradient(45deg, #3b82f6, #1a58ca)',
+      borderRadius: '50%',
+      opacity: 0.1
+    }} />
+    <div className="floating" style={{
+      position: 'absolute',
+      left: '15%',
+      bottom: '15%',
+      width: '30px',
+      height: '30px',
+      background: 'linear-gradient(45deg,rgb(45, 153, 220), #3b82f6)',
+      borderRadius: '50%',
+      opacity: 0.1,
+      animationDelay: '1s'
+    }} />
+  </div>
+
+  <div className="wave-divider" />
+
+  <div className="features-grid">
+    <div className="feature-card large centered glow animated">
+      <img
+        src="/preview.png"
+        alt="KiviBot 预览"
+        style={{
+          width: '100%',
+          borderRadius: '0.75rem',
+          boxShadow: '0 12px 24px rgba(0, 0, 0, 0.15)',
+          transform: 'perspective(1000px) rotateX(2deg)',
+          transition: 'all 0.3s ease'
+        }}
+      />
+      <h3 className="feature-title">现代化的框架设计</h3>
+    </div>
+    
+    <div className="feature-card animated" style={{
+      background: 'rgba(255, 255, 255, 0.05)',
+      backdropFilter: 'blur(10px)'
+    }}>
+      <h3 className="feature-title">轻量级运行</h3>
+      <p className="feature-content">
+        无需运行 UI，内存占用低，性能表现优异
+      </p>
+    </div>
+
+    <div className="feature-card">
+      <h3 className="feature-title">插件优化</h3>
+      <p className="feature-content">
+        简洁的插件开发体验，仅需少量代码即可实现功能
+      </p>
+      <img
+        src="/code-preview.png"
+        alt="插件代码预览"
+        style={{
+          width: '100%',
+          marginTop: '1rem',
+          borderRadius: '0.5rem',
+          border: '1px solid var(--nextra-border-color)'
+        }}
+      />
+    </div>
+
+    <div className="feature-card centered" style={{
+      background: 'linear-gradient(135deg, #3b82f6, #1a58ca)',
+      color: 'white',
+      position: 'relative',
+      overflow: 'hidden'
+    }}>
+      <div style={{
+        position: 'absolute',
+        top: 0,
+        left: 0,
+        width: '100%',
+        height: '100%',
+        background: 'url(/pattern.png)',
+        opacity: 0.1
+      }} />
+      <h3 className="feature-title" style={{ color: 'white', position: 'relative' }}>
+        跨平台支持
+      </h3>
+      <p style={{ position: 'relative' }}>
+        支持 Windows、Linux、macOS 和 Android
+      </p>
+       <img
+        src="/platform-preview.png"
+        alt="插件代码预览"
+        style={{
+          width: '100%',
+          marginTop: '5rem',
+          borderRadius: '0.5rem',
+          border: '1px solid var(--nextra-border-color)'
+        }}
+      />
+    </div>
+
+    <div className="feature-card large">
+      <h3 className="feature-title">更多特性</h3>
+      <p className="feature-content">
+        TypeScript 支持 / 插件热重载 / 消息指令管理...
+        <br />
+        提供了众多开箱即用的功能
+      </p>
+      <div style={{ marginTop: '1.5rem' }}>
+        <Link href="/docs" className="">
+          了解更多 →
+        </Link>
+      </div>
+    </div>
+  </div>
+
+  <div className="section-divider">
+    <div className="divider-line" />
+    <h3>用户们~~不~~喜欢KiviBot</h3>
+    <div className="divider-line" />
+  </div>
+
+  <div className="testimonials-grid">
+    <div className="testimonial-card">
+      <img src="https://avatars.githubusercontent.com/u/53367348?v=4" className="avatar" alt="用户头像" />
+      <div className="feature-content">
+        <span>"男娘加我" ~~Viki被狗🐶放上来了~~</span>
+      </div>
+      <span style={{ color: 'var(--nextra-primary-hue)' }}>—假的 Viki</span>
+    </div>
+
+    <div className="testimonial-card">
+      <img src="https://avatars.githubusercontent.com/u/106546046?v=4" className="avatar" alt="用户头像" />
+      <div className="feature-content">
+        <span>"插件开发太方便了，文档不详细，示例不丰富，强烈不推荐！ ~~这是哪来的串子~~"</span>
+      </div>
+      <span style={{ color: 'var(--nextra-primary-hue)' }}>— 某不知名群友 Dogxi</span>
+    </div>
+  </div>
+
+  <div className="quote-section" style={{
+    position: 'relative',
+    overflow: 'hidden',
+    background: `
+      radial-gradient(circle at 20% 50%, rgba(20, 110, 184, 0.05) 0%, transparent 50%),
+      radial-gradient(circle at 80% 50%, rgba(20, 110, 184, 0.05) 0%, transparent 50%)
+    `
+  }}>
+    <div style={{
+      position: 'absolute',
+      top: '50%',
+      left: '0',
+      width: '100%',
+      height: '1px',
+      background: 'linear-gradient(to right, transparent, var(--nextra-border-color), transparent)'
+    }} />
+    <p className="quote">
+      真正意义上的理想机器人，理应是功能足够强大，默默无闻的，在你需要的时候，又能以最高的效率及时给予你帮助
+    </p>
+    <span className="quote-author">— Viki</span>
+  </div>
+  
+  <ScrollToTop />
+</div>

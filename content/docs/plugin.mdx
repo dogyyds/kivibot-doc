@@ -1,0 +1,101 @@
+---
+title: 🧩 插件文档
+---
+
+## 🧩 插件文档
+
+`插件 (plugin)` 是 `KiviBot` 实现功能的必需品。
+
+`KiviBot` 本身**不提供**任何应用性功能，所以需要通过**安装插件**来实现丰富的功能。
+
+下面将教会你如何**安装一个插件，并启用它**。
+
+## 🍃 插件使用
+
+由于 `KiviBot` 当前版本 (kivibot@2.0.0-rc.1) 暂不支持通过框架直接安装插件。
+
+所以需要手动下载 `插件` ，并解压到`/框架目录/plugins`文件夹下面。
+
+如果你已经看了 [🥚 快速上手](/docs/start)，应该已经了解到`框架基础文件目录`是这样子的：
+
+import { FileTree } from "nextra/components";
+
+<FileTree>
+  <FileTree.Folder name="Bot" defaultOpen>
+    <FileTree.Folder name="data" />
+    <FileTree.Folder name="logs" />
+    <FileTree.Folder name="node_modules" />
+    <FileTree.Folder name="plugins" defaultOpen>
+      <FileTree.Folder name="demo1">
+        <FileTree.File name="index.ts" />
+      </FileTree.Folder>
+      <FileTree.Folder name="demo2">
+        <FileTree.File name="index.ts" />
+      </FileTree.Folder>
+      <FileTree.Folder name="demo3">
+        <FileTree.File name="index.ts" />
+      </FileTree.Folder>
+    </FileTree.Folder>
+    <FileTree.File name=".npmrc" />
+    <FileTree.File name="app.js" />
+    <FileTree.File name="kivi.config.toml" />
+    <FileTree.File name="package-lock.json" />
+    <FileTree.File name="package.json" />
+  </FileTree.Folder>
+</FileTree>
+
+> 框架各文件解释见 [框架配置/框架文件](/docs/config)
+
+这里演示目录中的 `plugins` 目录下面共有**三个插件**，分别为`demo` `demo1` `demo2`。 (demo 意为演示,展示的片段)
+
+而**每个插件文件夹**下均有 `index.ts` 文件，这是插件的**主入口**，也就是**必须包含的**。(index 意为主页,主要)
+
+接下来我们试着 **添加下面这个插件** 到 框架下，
+
+```typescript
+import { definePlugin } from "kivibot";
+
+export default definePlugin({
+  name: "demo1",
+  version: "1.0.0",
+  async setup(ctx) {
+    //改为自己的qq号
+    ctx.bot.sendPrivateMsg(114514, "demo1插件被启用了！");
+  },
+});
+```
+
+1️⃣ 首先在 `plugins` 目录下**新建 `demo1` 文件夹**。
+
+(请注意，**这里的`文件夹名称`要和`index.ts` 中导出的 `name` 相同**，如果要更改目录名请同时修改 `name` 属性)
+
+2️⃣ 然后 在 `plugins/demo1` 下**新建 `index.ts` 文件**。
+
+3️⃣ 将上面代码复制到 `index.ts` 文件中并保存。
+
+4️⃣ 通过 `QQ消息` 启用 `demo1` 插件 (需为主人)。基础消息命令见 [框架配置/框架命令](/docs/config)
+
+```bash
+#插件 重载 <插件名>
+
+#插件 启用 demo1
+```
+
+![plugin-on](/plugin-on.png)
+
+> [!TIP]
+>
+> **启用插件** 默认并**不需要重启进程**，可以直接启用或者进行重载！`#插件 重载 <插件名>`
+>
+> 如果插件需要安装 额外的 npm 包 (模块)，则必须安装模块后，重启进程。
+
+> 请避免频繁重启进程，这可能会引起登陆频繁等问题，见[常见问题](/docs/problem)
+
+✅ **很好，你已经启用了第一个插件！**
+
+## 🐾 接下来可以：
+
+- 在 [📋 插件列表](/docs/plugin_list) 获取现成插件。
+- 在 [🐣 开发文档](/docs/develop) 学习开发插件。(零基础->入门->进阶)
+
+- 在 [👀 更多](/docs/more) 中加入交流群或开发群。

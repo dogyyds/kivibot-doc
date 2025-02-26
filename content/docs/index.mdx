@@ -1,0 +1,106 @@
+---
+title: 🧐 框架介绍
+---
+
+## 🧐 框架介绍
+
+![img](/kivibot-logo.png)
+`🤖 KiviBot`是一款使用 [Typescript](https://www.typescriptlang.org/) 编写的一款 **轻量** **优雅** **跨平台** QQ 机器人框架。
+
+- 框架的核心 QQ 协议基于 [icqq](https://icqq.pages.dev/) ，在此表示感谢。
+- 本项目初衷在于**提高群活跃氛围**、**方便群管理**，仅供个人娱乐、学习交流使用。
+- **不得**将本项目用于**任何非法用途**，若因用户个人原因而造成的一切不良后果**与框架作者无关**。
+
+框架安装与使用详情，请移步[新手指南](/docs/start)。
+
+> [!TIP]
+>
+> 本文档由非官方维护，框架作者是 [Viki](https://viki.moe/)，框架也仅发布为 npm 包的形式。
+> 如果文档有问题可以及时与我们联系，见标题栏 `更多`
+
+本文档为 `🤖 KiviBot2.0.0@rc.1` 最新文档。 --2025.2.26
+
+## 🫨 Why KiviBot
+
+- **📦 轻量**：无需运行 UI，内存占用相当低。
+- **⚡️ 高效**：框架依赖少，执行效率高。
+- **😎 优雅**：框架与插件均使用 `TypeScript` 编写，即写即用，支持热重载。
+- **🖥️ 跨平台**：Windows, Linux, Mac, Android 等都能运行。
+- **🥚 注重体验**：使用 QQ 消息 执行操作、启用或重载插件。
+- **🚲 极速开发**：学习门槛低，只需几行 `Typescript` 代码就能编写插件。
+
+## 🥚 快速上手
+
+根据您系统的版本，选择相应的教程：
+
+import { Cards } from "nextra/components";
+import { WindowsIcon, LinuxIcon, AppleIcon, AndroidIcon, TipIcon } from "@components/icons";
+
+<Cards>
+  <Cards.Card
+    icon={<WindowsIcon />}
+    title="Windows"
+    href="/docs/start/windows"
+  />
+  <Cards.Card 
+    icon={<LinuxIcon />} 
+    title="Linux" 
+    href="/docs/start/linux" 
+  />
+  <Cards.Card
+    icon={<AppleIcon />}
+    title="macOS"
+    href="/docs/start/macos"
+  />
+  <Cards.Card
+    icon={<AndroidIcon />}
+    title="Android (Termux)"
+    href="/docs/start/android"
+  />
+</Cards>
+
+## 🍃 插件示例
+
+```typescript
+import { definePlugin } from "kivibot";
+
+export default definePlugin({
+  name: "群复读",
+  version: "1.0.0",
+  async setup(ctx) {
+    ctx.handle("message.group", (e) => {
+      // 快速回复消息
+      e.reply(e.raw_message);
+    });
+  },
+});
+```
+
+> 你现在并不需要理解代码意思，你只需要知道编写插件很简单，这里只有 ctx.handle()构成的三行代码是用于实现群复读功能的，其他均为固定模版。
+
+**没错只是几行代码，就实现了群聊复读的功能 (它会复读收到的每一条消息)。**
+
+插件使用详细 见 [🧩 插件文档](/docs/plugins)。
+
+插件开发详细 见 [🐣 开发文档](/docs/plugins)。
+
+## 🤕 FAQ 常见问题 
+ 
+<Cards.Card
+  icon={<TipIcon />}
+  title="常见问题"
+  href="/about"
+  arrow
+/>
+
+> 若仍无法解决，可以[礼貌 Q 群询问](https://qm.qq.com/cgi-bin/qm/qr?k=fteC6GcYQzcT1nnaBYDVbRWCIUkpIQrk&jump_from=webapi&authKey=GlN8HuZgPU0ze6EMYWk/8ZS5OGKtKZKxWzZjrj/NWMWEXHXVGpDrxJsmZ/feQcwp)
+
+## 📝 末尾的留言板
+
+> 真正意义上的理想机器人，理应是功能足够强大，默默无闻的，在你需要的时候，又能以最高的效率及时给予你帮助，足够方便，还能偶尔带来趣味与欢乐，而不是一味的堆积菜单，搞一堆花里胡哨的插件或者功能，抛开太多无意义的功能不说，还不断的刷屏，就为了显得机器人有多么多的功能 —— Viki
+
+> Viki 说的对 —— Dogxi
+
+上面为精选留言 doge，更多留言见：[留言板](#留言板)
+
+如果你也想留言的话，欢迎在 Github 仓库提 issue = =

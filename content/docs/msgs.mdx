@@ -1,0 +1,70 @@
+# 📝 留言板
+
+> ~~来自Viki某不知名粉丝投稿 爱他就把他挂墙上~~
+
+<div style={{
+  display: 'grid',
+  gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+  gap: '1rem',
+  padding: '1rem'
+}}>
+  {[
+    { src: '/msgs/msg1.png', alt: 'Message 1' },
+    { src: '/msgs/msg2.png', alt: 'Message 2' },
+    { src: '/msgs/msg3.png', alt: 'Message 3' }
+  ].map((img, idx) => (
+    <div key={idx} style={{
+      background: 'var(--nextra-card-background)',
+      padding: '1rem',
+      borderRadius: '8px',
+      boxShadow: '0 2px 4px rgba(0,0,0,0.1)',
+      transition: 'transform 0.2s'
+    }}>
+      <img
+        src={img.src}
+        alt={img.alt}
+        style={{
+          width: '100%',
+          height: 'auto',
+          borderRadius: '8px'
+        }}
+      />
+    </div>
+  ))}
+</div>
+
+---
+
+
+
+<div style={{
+    display: 'flex',
+    gap: '2rem',
+    justifyContent: 'center',
+    alignItems: 'center',
+    margin: '2rem 0'
+}}>
+    <div style={{ textAlign: 'center' }}>
+        <img 
+            src="/gjgcs.png" 
+            alt="仰望大佬" 
+            width="200" 
+            style={{ borderRadius: '8px' }}
+        />
+        <p>仰望高级工程师 Viki</p>
+    </div>
+    
+    <div style={{ textAlign: 'center' }}>
+        <img 
+            src="/waiwai.jpg" 
+            alt="歪歪" 
+            width="200" 
+            style={{ borderRadius: '8px' }}
+        />
+        <p>歪歪</p>
+    </div>
+</div>
+
+<div style={{ textAlign: 'center', marginTop: '1rem' }}>
+    投稿请找 [🐶 Dogxi](https://dogxi.me)
+</div>

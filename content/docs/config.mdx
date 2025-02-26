@@ -1,0 +1,101 @@
+---
+title: ⚙️ 框架配置
+---
+
+## ⚙️ 框架配置
+
+主要包含以下三大内容：
+
+## 🪄 框架命令
+
+`KiviBot` 没有 UI 界面，相关操作都是通过 **QQ 消息指令**来实现的。
+
+向机器人发送 `#帮助` 可查看所有框架命令，**仅限管理员使用**，私聊群聊均有效。
+
+**消息指令列表**
+
+下表列出了框架所有的消息指令，尖括号代表此处应该填写变量，**实际发送的时候不需要加尖括号**，请根据实际情况输入。
+
+| 管理员消息指令         | 功能与说明                      |
+| ---------------------- | ------------------------------- |
+| `#帮助`                | 显示帮助信息                    |
+| `#插件`                | 框架插件管理                    |
+| `#插件 列表`           | 显示插件列表                    |
+| `#插件 启用 <插件 ID>` | 启用指定插件（ID 即插件名）     |
+| `#插件 禁用 <插件 ID>` | 禁用指定插件（ID 即插件名）     |
+| `#插件 重载 <插件 ID>` | 重载指定插件（ID 即插件名）     |
+| `#设置`                | 框架设置管理                    |
+| `#状态`                | 显示框架状态                    |
+| `#更新`                | 更新框架版本（rc 版本不要更新） |
+| `#退出`                | 退出框架进程                    |
+
+## 📦 框架文件
+
+import { FileTree } from "nextra/components";
+
+<FileTree>
+  <FileTree.Folder name="Bot" defaultOpen>
+    <FileTree.Folder name="data" />
+    <FileTree.Folder name="logs" />
+    <FileTree.Folder name="node_modules" />
+    <FileTree.Folder name="plugins">
+      <FileTree.Folder name="demo1">
+        <FileTree.File name="index.ts" />
+      </FileTree.Folder>
+      <FileTree.Folder name="demo2">
+        <FileTree.File name="index.ts" />
+      </FileTree.Folder>
+      <FileTree.Folder name="demo3">
+        <FileTree.File name="index.ts" />
+      </FileTree.Folder>
+    </FileTree.Folder>
+    <FileTree.File name=".npmrc" />
+    <FileTree.File name="app.js" />
+    <FileTree.File name="kivi.config.toml" />
+    <FileTree.File name="package-lock.json" />
+    <FileTree.File name="package.json" />
+  </FileTree.Folder>
+</FileTree>
+
+| 文件/文件夹 (从上往下)              | 说明                           |
+| ----------------------------------- | ------------------------------ |
+| `data`                              | 存储账号登入数据               |
+| `logs`                              | 存储框架输出日志               |
+| `node_modules`                      | 存储框架 npm 包 (模块)         |
+| `plugins`                           | 框架插件目录                   |
+| `.npmrc`                            | 配置 npm 包安装源 (默认国内源) |
+| `app.js`                            | 框架启动入口                   |
+| `kivi.config.toml`                  | 框架配置文件                   |
+| `package.json`/ `package-lock.json` | nodejs 环境配置                |
+
+## 🔌 配置文件
+
+框架目录下的 `kivi.config.toml` 是 `KiviBot` 的配置文件，包含了一系列框架配置，可以手动进行修改，重启后生效。
+
+> `npm start{:shell}` 命令会检索当前目录下的 `kivi.config.toml` 配置文件以及 `app.js` 入口文件，从而使用正确的配置启动框架。
+
+### 字段说明
+
+```toml
+# 机器人的 QQ 号
+uin = 114514
+# 机器人的 QQ 密码，默认加密，无法直接更改
+password = ""
+# 机器人的主人，拥有框架层的最高权限，可以执行所有命令
+owners = [114514,114513]
+# 机器人的管理员，原则上只有插件层管理权限，不能执行框架层的命令
+admins = []
+# 机器人启用的插件，插件的加载顺序按照列表的顺序
+plugins = ["echo","demo"]
+
+# 传给 oicq/icqq 的 createClient 方法的参数
+[oicq]
+# 日志级别，可选值：trace, debug, info, warn, error
+log_level = "trace"
+# 登录协议，1 为安卓手机, 2 为安卓平板, 3 为安卓手表, 4 为 MacOS, 5 为 iPad
+platform = 2
+# 使用的协议版本，不指定或为空时使用最新版本
+# ver = ""
+# 签名 API 地址，不指定使用内置默认签名
+sign_api_addr = ""
+```

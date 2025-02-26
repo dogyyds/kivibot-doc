@@ -1,0 +1,39 @@
+---
+title: 系统选择
+---
+
+## 🥚 快速上手
+
+首先**根据你系统的版本**，选择相应的教程：
+
+import { Cards } from "nextra/components";
+import { WindowsIcon, LinuxIcon, AppleIcon, AndroidIcon } from "@components/icons";
+
+<Cards>
+  <Cards.Card
+    icon={<WindowsIcon />}
+    title="Windows"
+    href="/docs/start/windows"
+  />
+  <Cards.Card 
+    icon={<LinuxIcon />} 
+    title="Linux" 
+    href="/docs/start/linux" 
+  />
+  <Cards.Card
+    icon={<AppleIcon />}
+    title="macOS"
+    href="/docs/start/macos"
+  />
+  <Cards.Card
+    icon={<AndroidIcon />}
+    title="Android (Termux)"
+    href="/docs/start/android"
+  />
+</Cards>
+
+随身WiFi：教程暂未更新，刷为 Linux 后按 Linux 教程即可
+
+教程尽可能说的易懂了，如果还有不懂的地方可以 [bing 一下](https://bing.com) 🐥
+
+[🥚 快速上手](/docs/start) -> [🧩 插件文档](/docs/plugin)
