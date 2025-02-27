@@ -2,7 +2,7 @@
   <a href="https://github.com/KiviBotLab/KiviBot" target="_blank">
     <img width="160" src="/public/kivibot-logo.png" alt="logo">
   </a>
-  <h1 id="kivibot"><a href="https://github.com/KiviBotLab/KiviBot" target="_blank">Awesome KiviBot Doc</a></h1>
+  <h1 id="kivibot"><a href="https://kivi.dogxi.me" target="_blank">Awesome KiviBot Doc</a></h1>
   
 [![downloads](https://img.shields.io/npm/dm/kivibot?style=flat-square)](https://www.npmjs.com/package/kivibot@rc)
 [![GitHub](https://img.shields.io/github/license/dogyyds/kivibot-doc?style=flat-square)](https://github.com/dogyyds/kivibot-doc/blob/main/LICENSE)
@@ -18,6 +18,9 @@
 求 Star⭐️，求 Fork🍴，求 PR🎉，求 Issue🚀
 
 ## 快速访问
+> 由于Kivibot为Viki个人自用项目，所以并未发布为Github仓库，只发布为npm包的形式，代码可以自行到[npmjs](https://npmjs.com)上查看。
+
+[npmjs](https://npmjs.com)
 
 [前往文档](https://kivi.dogxi.me)
 
