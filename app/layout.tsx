@@ -45,7 +45,7 @@ export default async function RootLayout({ children }) {
           navbar={navbar}
           sidebar={{ defaultMenuCollapseLevel: 1 }}
           pageMap={await getPageMap()}
-          docsRepositoryBase="https://github.com/shuding/kivibot-doc/tree/main/docs"
+          docsRepositoryBase="https://github.com/dogyyds/kivibot-doc/tree/main"
           footer={footer}
           // ... Your additional layout options
         >
